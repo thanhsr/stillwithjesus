@@ -139,9 +139,9 @@
   const products = [
     {name:"Christian men's shirts", img:"/IMG/1.jpg", url:"https://amzn.to/4q80XXN"},
 	{name:"Christian women's shirts", img:"/IMG/4.jpg", url:"https://amzn.to/4pZKIvG"},
-    {name:"Cross+Crown Premium 14K Gold", img:"/IMG/2.jpg", url:"https://amzn.to/4xqbZd8"},
+    {name:"Christian men's necklace", img:"/IMG/2.jpg", url:"https://amzn.to/3U0NlS4"},
+	{name:"Christian women's necklace", img:"/IMG/5.jpg", url:"https://amzn.to/4xt6BGu"},
     {name:"Holy Bible", img:"/IMG/3.jpg", url:"https://amzn.to/4q1sGJA"},
-    {name:"Christian women's necklace", img:"/IMG/5.jpg", url:"https://amzn.to/4xt6BGu"},
     {name:"Product 6", img:"/IMG/", url:"#"},
     {name:"Product 7", img:"/IMG/1.jpg", url:"#"},
     {name:"Product 8", img:"/IMG/1.jpg", url:"#"},
