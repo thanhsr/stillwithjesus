@@ -155,7 +155,7 @@
     margin:10px auto 0;
     padding:48px 24px 8px;
     text-align:center;
-    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
   }
   .mission .cross-sm{
     font-size:20px;color:var(--gold);letter-spacing:.4em;margin-bottom:14px;
