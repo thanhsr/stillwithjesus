@@ -17,6 +17,15 @@
 <meta property="og:url" content="https://stillwithjesus.com/" />
 <meta property="og:site_name" content="Still With Jesus" />
 <title>Still With Jesus</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZSYG4E1VCY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZSYG4E1VCY');
+</script>
 <style>
   :root{
     --ink:#1c1a17;
