@@ -150,6 +150,67 @@
     color:#8a7a5d;
 	
   }
+  .mission{
+    max-width:760px;
+    margin:10px auto 0;
+    padding:48px 24px 8px;
+    text-align:center;
+    border-top:1px solid var(--line);
+  }
+  .mission .cross-sm{
+    font-size:20px;color:var(--gold);letter-spacing:.4em;margin-bottom:14px;
+  }
+  .mission h2{
+    font-size:clamp(24px,5vw,34px);
+    font-weight:400;
+    margin-bottom:22px;
+    color:var(--gold-deep);
+  }
+  .mission p{
+    font-size:clamp(15px,3.4vw,17px);
+    line-height:1.75;
+    margin-bottom:18px;
+    color:#4a4032;
+  }
+  .mission .cta{
+    display:inline-block;
+    margin-top:14px;
+    background:var(--gold);
+    color:#fff;
+    font-family:system-ui,Arial,sans-serif;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:.08em;
+    text-decoration:none;
+    padding:12px 30px;
+    border-radius:6px;
+    transition:background .15s ease;
+  }
+  .mission .cta:hover{background:var(--gold-deep)}
+  .social{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    margin-bottom:18px;
+  }
+  .social a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    color:#7a6a4d;
+    background:var(--card);
+    transition:color .15s ease, border-color .15s ease, transform .15s ease;
+  }
+  .social a:hover{
+    color:var(--gold-deep);
+    border-color:var(--gold);
+    transform:translateY(-2px);
+  }
+  .social svg{width:19px;height:19px;fill:currentColor}
 </style>
 </head>
 <body>
@@ -158,8 +219,6 @@
   <h1>Still <span>With</span> Jesus</h1>
   <p>Faith &middot; Grace &middot; Everyday Blessings</p>
 </header>
-<p class="intro">Discover thousands of inspiring designs — tap View Deal to shop</p>
-<main class="grid" id="grid"></main>
 <section class="mission">
   <div class="cross-sm">&#10013;</div>
   <h2>Walking Every Day, Still With Jesus</h2>
@@ -168,6 +227,9 @@
   <p>When you find something that speaks to your heart, we invite you to bring it home. Each purchase you make through our links helps us keep this little corner of faith alive and growing, at no extra cost to you. It's a small way we grow together &mdash; you, us, and the message we love to share.</p>
   <a class="cta" href="#grid">Explore the Collection</a>
 </section>
+<p class="intro">Discover thousands of inspiring designs — tap View Deal to shop</p>
+<main class="grid" id="grid"></main>
+
 <footer>
 <div class="social">
     <a href="https://youtube.com/@stillwithjesus.official" target="_blank" rel="noopener" aria-label="YouTube">
