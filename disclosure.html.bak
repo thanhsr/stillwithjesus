@@ -115,7 +115,8 @@
 
 <footer>
   As an Amazon Associate we earn from qualifying purchases.<br>
-  &copy; 2026 Still With Jesus &middot; <a href="disclosure.html">Affiliate Disclosure</a>
+  <a href="disclosure.html" style="color:#8a5f16;text-decoration:none">Affiliate Disclosure</a><br>
+  &copy; 2026 Still With Jesus &middot; 
 </footer>
 </body>
 </html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bible Verse of the Day &middot; Still With Jesus</title>
+<meta name="description" content="A daily Bible verse and reflection to keep His presence near. Still With Jesus.">
+<link rel="canonical" href="https://stillwithjesus.com/verse.html" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<style>
+  :root{
+    --ink:#1c1a17;
+    --paper:#f6f1e7;
+    --card:#fffdf8;
+    --gold:#b8862d;
+    --gold-deep:#8a5f16;
+    --line:#e3d8c2;
+    --shadow:rgba(60,44,18,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:Georgia,'Times New Roman',serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  header{
+    text-align:center;
+    padding:44px 20px 24px;
+    border-bottom:1px solid var(--line);
+    background:radial-gradient(120% 80% at 50% -20%, #fbf6ec 0%, var(--paper) 70%);
+  }
+  header .cross{font-size:22px;color:var(--gold);letter-spacing:.4em;margin-bottom:10px}
+  header h1{font-size:clamp(24px,6vw,40px);font-weight:400;letter-spacing:.02em}
+  header h1 span{font-style:italic;color:var(--gold-deep)}
+  header a.home{
+    display:inline-block;margin-top:14px;
+    font-family:system-ui,Arial,sans-serif;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:#7a6a4d;text-decoration:none;
+  }
+  header a.home:hover{color:var(--gold-deep)}
+
+  main{max-width:680px;margin:46px auto 0;padding:0 22px}
+
+  .today{
+    text-align:center;
+    font-family:system-ui,Arial,sans-serif;
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:#9a8a6d;margin-bottom:26px;
+  }
+
+  .verse-card{
+    background:radial-gradient(120% 90% at 50% -10%, #fffdf8 0%, #f7f0e2 100%);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:44px 34px 36px;
+    text-align:center;
+    box-shadow:0 4px 20px var(--shadow);
+  }
+  .verse-card .mark{font-size:44px;color:var(--gold);line-height:.6;font-family:Georgia,serif}
+  .verse-text{
+    font-size:clamp(21px,5vw,28px);
+    line-height:1.6;
+    color:#33291b;
+    font-style:italic;
+    margin:18px 0 22px;
+  }
+  .verse-ref{
+    font-family:system-ui,Arial,sans-serif;
+    font-size:14px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--gold-deep);font-weight:600;
+  }
+
+  .reflection{
+    margin-top:34px;
+    padding:0 6px;
+  }
+  .reflection h2{
+    text-align:center;
+    font-size:15px;letter-spacing:.2em;text-transform:uppercase;
+    font-family:system-ui,Arial,sans-serif;font-weight:600;color:#7a6a4d;
+    margin-bottom:16px;
+  }
+  .reflection p{
+    font-size:clamp(16px,3.6vw,18px);
+    line-height:1.8;
+    color:#4a4032;
+  }
+
+  .support{
+    max-width:680px;
+    margin:48px auto 0;
+    padding:36px 24px 8px;
+    text-align:center;
+    border-top:1px solid var(--line);
+  }
+  .support .cross-sm{font-size:18px;color:var(--gold);letter-spacing:.4em;margin-bottom:12px}
+  .support p{
+    font-size:clamp(15px,3.4vw,17px);line-height:1.75;color:#4a4032;
+    margin-bottom:18px;
+  }
+  .support .cta{
+    display:inline-block;background:var(--gold);color:#fff;text-decoration:none;
+    font-family:system-ui,Arial,sans-serif;font-size:14px;font-weight:600;
+    letter-spacing:.08em;padding:12px 30px;border-radius:6px;
+    transition:background .15s ease;
+  }
+  .support .cta:hover{background:var(--gold-deep)}
+
+  footer{
+    text-align:center;
+    padding:40px 20px;
+    margin-top:40px;
+    border-top:1px solid var(--line);
+    font-family:system-ui,Arial,sans-serif;
+    font-size:12px;
+    color:#8a7a5d;
+  }
+  footer a{color:var(--gold-deep);text-decoration:none}
+  .nav-btns{
+    display:flex;
+    justify-content:center;
+    flex-wrap:nowrap;
+    gap:10px;
+    max-width:760px;
+    margin:30px auto 0;
+    padding:0 16px;
+  }
+  .nav-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    text-align:center;
+    text-decoration:none;
+    background:var(--card);
+    color:var(--gold-deep);
+    border:1.5px solid var(--gold);
+    font-family:system-ui,Arial,sans-serif;
+    font-size:clamp(11px,3vw,14px);
+    font-weight:600;
+    letter-spacing:.03em;
+    line-height:1.2;
+    padding:11px 10px;
+    border-radius:8px;
+    flex:1 1 0;
+    transition:background .16s ease, color .16s ease, transform .16s ease, box-shadow .16s ease;
+  }
+  .nav-btn:hover{
+    background:var(--gold);
+    color:#fff;
+    transform:translateY(-2px);
+    box-shadow:0 6px 16px rgba(140,95,22,.28);
+  }
+
+</style>
+</head>
+<body>
+<header>
+  <div class="cross">&#10013;</div>
+  <h1>Still <span>With</span> Jesus</h1>
+  <a class="home" href="index.html">&larr; Back to home</a>
+    <nav class="nav-btns">
+  <a href="#message" class="nav-btn">✝ Message from Jesus</a>
+  <a href="#grid" class="nav-btn">Collection</a>
+  <a href="verse.html" class="nav-btn">Verse of the Day</a>
+</nav>
+</header>
+
+<main>
+  <div class="today" id="today"></div>
+  <div class="verse-card">
+    <div class="mark">&ldquo;</div>
+    <p class="verse-text" id="verseText">Loading today&rsquo;s verse&hellip;</p>
+    <div class="verse-ref" id="verseRef"></div>
+  </div>
+
+  <div class="reflection">
+    <h2>A Moment to Reflect</h2>
+    <p id="reflection"></p>
+  </div>
+</main>
+
+<section class="support">
+  <div class="cross-sm">&#10013;</div>
+  <p>If today&rsquo;s verse spoke to your heart, would you help us keep sharing His word? Each purchase you make through our links supports our team in maintaining this site and carrying His message to more people &mdash; at no extra cost to you.</p>
+  <a class="cta" href="index.html#grid">Explore the Collection</a>
+</section>
+
+<footer>
+  As an Amazon Associate we earn from qualifying purchases.<br>
+  &copy; 2026 Still With Jesus &middot; <a href="disclosure.html">Affiliate Disclosure</a>
+</footer>
+
+<script>
+  (function(){
+    // Day of year: 0-365
+    function dayOfYear(d){
+      const start = new Date(d.getFullYear(), 0, 0);
+      const diff = d - start;
+      return Math.floor(diff / 86400000);
+    }
+
+    const now = new Date();
+    document.getElementById('today').textContent =
+      now.toLocaleDateString('en-US', {weekday:'long', month:'long', day:'numeric', year:'numeric'});
+
+    fetch('verses.json')
+      .then(r => r.ok ? r.json() : Promise.reject())
+      .then(list => {
+        if(!list.length) throw new Error('empty');
+        const idx = (dayOfYear(now) - 1) % list.length; // rotates through the list, never same two days in a row within the set
+        const v = list[(idx + list.length) % list.length];
+        render(v);
+      })
+      .catch(() => {
+        render({
+          ref: "John 3:16",
+          text: "For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.",
+          explain: "Wherever you are today, the offer stands: not perishing, but life that never ends. You are among the 'whoever' He had in mind."
+        });
+      });
+
+    function render(v){
+      document.getElementById('verseText').textContent = v.text;
+      document.getElementById('verseRef').textContent = v.ref;
+      document.getElementById('reflection').textContent = v.explain;
+    }
+  })();
+</script>
+</body>
+</html>

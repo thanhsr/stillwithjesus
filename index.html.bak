@@ -6,7 +6,7 @@
 <meta name="description" content="Wear your faith. Share His love. ✝️ Discover Christian gifts and apparel at Still With Jesus. ❤️">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://stillwithjesus.com" />
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Still With Jesus - Christian Gifts Worth Looking At ✝️" />
@@ -292,18 +292,71 @@
     transition:background .15s ease;
   }
   .pray-btn:hover{background:var(--gold-deep)}
+.nav-btns{
+    display:flex;
+    justify-content:center;
+    flex-wrap:nowrap;
+    gap:10px;
+    max-width:760px;
+    margin:30px auto 0;
+    padding:0 16px;
+  }
+  .nav-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    text-align:center;
+    text-decoration:none;
+    background:var(--card);
+    color:var(--gold-deep);
+    border:1.5px solid var(--gold);
+    font-family:system-ui,Arial,sans-serif;
+    font-size:clamp(11px,3vw,14px);
+    font-weight:600;
+    letter-spacing:.03em;
+    line-height:1.2;
+    padding:11px 10px;
+    border-radius:8px;
+    flex:1 1 0;
+    transition:background .16s ease, color .16s ease, transform .16s ease, box-shadow .16s ease;
+  }
+  .nav-btn:hover{
+    background:var(--gold);
+    color:#fff;
+    transform:translateY(-2px);
+    box-shadow:0 6px 16px rgba(140,95,22,.28);
+  }
+
 </style>
 </head>
 <body>
+<div class="pray-overlay" id="prayOverlay" aria-hidden="true">
+  <div class="pray-box" role="dialog" aria-modal="true">
+    <button class="pray-close" id="prayClose" aria-label="Close">&times;</button>
+    <div class="pray-cross">&#10013;</div>
+    <div class="pray-eyebrow">A message for you today</div>
+    <p class="pray-text" id="prayText"></p>
+    <div class="pray-cta" id="prayCta">
+      <p>If these words touched your heart, you can help our team keep sharing His message and maintaining the platforms that carry His love to others.</p>
+      <a class="pray-btn" href="#grid" id="prayShop">Support Our Mission</a>
+    </div>
+  </div>
+</div>
 <header>
   <div class="cross">&#10013;</div>
   <h1>Still <span>With</span> Jesus</h1>
   <p>Faith &middot; Grace &middot; Everyday Blessings</p>
+  <nav class="nav-btns">
+  <a href="#message" class="nav-btn">✝ Message from Jesus</a>
+  <a href="#grid" class="nav-btn">Collection</a>
+  <a href="verse.html" class="nav-btn">Verse of the Day</a>
+</nav>
 </header>
+
 <section class="mission">
   <p>Faith isn't only for Sunday mornings. It lives in the small corners of an ordinary day &mdash; the mug you hold at dawn, the words on your wall, the necklace resting close to your heart. These quiet reminders have a way of pulling us back to what matters when the world grows loud.</p>
   <p>Still With Jesus began with one simple hope: to help believers carry their faith with them, everywhere they go. Every item here is chosen to comfort, to encourage, and to keep His presence near &mdash; a gentle whisper that you are never walking alone.</p>
-  <a class="cta" href="#grid">Explore the Collection</a>
 </section>
 <p class="intro">Discover thousands of inspiring designs — tap View Deal to shop</p>
 <main class="grid" id="grid"></main>
