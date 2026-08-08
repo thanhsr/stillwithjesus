@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Still With Jesus</title>
 <style>
@@ -131,6 +132,7 @@
 
 <footer>
   As an Amazon Associate we earn from qualifying purchases.<br>
+  <a href="disclosure.html" style="color:#8a5f16;text-decoration:none">Affiliate Disclosure</a><br>
   &copy; 2026 Still With Jesus
 </footer>
 
@@ -159,7 +161,7 @@
       <div class="body">
         <h2>${p.name}</h2>
         <a class="buy" href="${p.url}" target="_blank" rel="nofollow noopener">
-          ${cart} BUY NOW
+          ${cart} VIEW DEAL
         </a>
       </div>
     </article>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affiliate Disclosure &middot; Still With Jesus</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --paper:#f6f1e7;
+    --card:#fffdf8;
+    --gold:#b8862d;
+    --gold-deep:#8a5f16;
+    --line:#e3d8c2;
+    --shadow:rgba(60,44,18,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:Georgia,'Times New Roman',serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  header{
+    text-align:center;
+    padding:48px 20px 28px;
+    border-bottom:1px solid var(--line);
+    background:radial-gradient(120% 80% at 50% -20%, #fbf6ec 0%, var(--paper) 70%);
+  }
+  header .cross{font-size:24px;color:var(--gold);letter-spacing:.4em;margin-bottom:12px}
+  header h1{font-size:clamp(26px,6vw,42px);font-weight:400;letter-spacing:.02em}
+  header h1 span{font-style:italic;color:var(--gold-deep)}
+
+  main{
+    max-width:720px;
+    margin:40px auto;
+    padding:0 22px 60px;
+  }
+  main .eyebrow{
+    font-family:system-ui,Arial,sans-serif;
+    font-size:12px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:#7a6a4d;
+    margin-bottom:10px;
+  }
+  main h2{
+    font-size:28px;
+    font-weight:400;
+    margin-bottom:24px;
+  }
+  main h3{
+    font-size:19px;
+    font-weight:400;
+    color:var(--gold-deep);
+    margin:28px 0 8px;
+  }
+  main p{margin-bottom:16px}
+  .back{
+    display:inline-block;
+    margin-top:32px;
+    font-family:system-ui,Arial,sans-serif;
+    font-size:14px;
+    color:var(--gold-deep);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+    padding-bottom:2px;
+  }
+  .back:hover{color:var(--ink)}
+
+  footer{
+    text-align:center;
+    padding:26px 20px 40px;
+    border-top:1px solid var(--line);
+    font-family:system-ui,Arial,sans-serif;
+    font-size:12px;
+    color:#8a7a5d;
+  }
+  footer a{color:var(--gold-deep);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<header>
+  <div class="cross">&#10013;</div>
+  <h1>Still <span>With</span> Jesus</h1>
+</header>
+
+<main>
+  <div class="eyebrow">Legal</div>
+  <h2>Affiliate Disclosure</h2>
+
+  <p>Still With Jesus is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.</p>
+
+  <p>As an Amazon Associate, we earn from qualifying purchases. This means that when you click certain links on this site and make a purchase, we may receive a small commission at no additional cost to you. The price you pay is exactly the same whether you use our link or not.</p>
+
+  <h3>Why we use affiliate links</h3>
+  <p>Affiliate commissions help support the running of this website so we can continue to share products we believe in. We only feature items we consider relevant to our visitors.</p>
+
+  <h3>Honesty matters to us</h3>
+  <p>Our recommendations are based on our own judgment. Earning a commission never changes the products we choose to display. We encourage you to do your own research and read reviews before making any purchase.</p>
+
+  <h3>Product information &amp; pricing</h3>
+  <p>Product details, availability, and prices are set by Amazon and may change at any time. The information shown on Amazon at the time of purchase is what applies to your order. We are not responsible for pricing errors, product descriptions, or availability on Amazon.</p>
+
+  <h3>Trademark notice</h3>
+  <p>Amazon and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.</p>
+
+  <h3>Questions</h3>
+  <p>If you have any questions about this disclosure, please feel free to reach out to us.</p>
+
+  <a class="back" href="index.html">&larr; Back to home</a>
+</main>
+
+<footer>
+  As an Amazon Associate we earn from qualifying purchases.<br>
+  &copy; 2026 Still With Jesus &middot; <a href="disclosure.html">Affiliate Disclosure</a>
+</footer>
+</body>
+</html>
