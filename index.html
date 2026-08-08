@@ -294,9 +294,9 @@
   .pray-btn:hover{background:var(--gold-deep)}
 .nav-btns{
     display:flex;
+    flex-wrap:wrap;
     justify-content:center;
-    flex-wrap:nowrap;
-    gap:10px;
+    gap:12px;
     max-width:760px;
     margin:30px auto 0;
     padding:0 16px;
@@ -312,13 +312,12 @@
     color:var(--gold-deep);
     border:1.5px solid var(--gold);
     font-family:system-ui,Arial,sans-serif;
-    font-size:clamp(11px,3vw,14px);
+    font-size:14px;
     font-weight:600;
     letter-spacing:.03em;
     line-height:1.2;
-    padding:11px 10px;
-    border-radius:8px;
-    flex:1 1 0;
+    padding:12px 18px;
+    border-radius:10px;
     transition:background .16s ease, color .16s ease, transform .16s ease, box-shadow .16s ease;
   }
   .nav-btn:hover{
@@ -326,6 +325,15 @@
     color:#fff;
     transform:translateY(-2px);
     box-shadow:0 6px 16px rgba(140,95,22,.28);
+  }
+  /* Mobile: 3 on top row, 2 on bottom row */
+  @media(max-width:640px){
+    .nav-btns{gap:10px}
+    .nav-btn{
+      flex:0 0 calc(33.333% - 10px);
+      padding:12px 6px;
+      font-size:clamp(11px,3vw,13px);
+    }
   }
 
 </style>
@@ -347,10 +355,12 @@
   <div class="cross">&#10013;</div>
   <h1>Still <span>With</span> Jesus</h1>
   <p>Faith &middot; Grace &middot; Everyday Blessings</p>
-  <nav class="nav-btns">
-  <a href="#message" class="nav-btn">✝ Message from Jesus</a>
-  <a href="#grid" class="nav-btn">Collection</a>
-  <a href="verse.html" class="nav-btn">Verse of the Day</a>
+    <nav class="nav-btns">
+  <a href="/#message" class="nav-btn">Message from Jesus</a>
+  <a href="/#grid" class="nav-btn">Collection</a>
+  <a href="/verse.html" class="nav-btn">Verse of the Day</a>
+  <a href="/pray.html" class="nav-btn">Pray With Me</a>
+  <a href="/send-prayer.html" class="nav-btn">Send A Prayer</a>
 </nav>
 </header>
 

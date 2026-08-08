@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Send a Prayer &middot; Still With Jesus</title>
+<meta name="description" content="Send a personal prayer to someone you love. Still With Jesus.">
+<meta property="og:type" content="website" />
+<meta property="og:title" content="This prayer is for you." />
+<meta property="og:description" content="A prayer was written just for you at Still With Jesus." />
+<meta property="og:site_name" content="Still With Jesus" />
+<meta property="og:image" content="https://stillwithjesus.com/IMG/prayer.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="628" />
+<meta property="og:url" content="https://stillwithjesus.com/" />
+<meta property="og:site_name" content="Still With Jesus" />
+<meta property="fb:pages" content="100092749518236" />
+<style>
+  :root{
+    --ink:#1c1a17; --paper:#f6f1e7; --card:#fffdf8;
+    --gold:#b8862d; --gold-deep:#8a5f16; --line:#e3d8c2;
+    --shadow:rgba(60,44,18,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  header{text-align:center;padding:44px 20px 24px;border-bottom:1px solid var(--line);background:radial-gradient(120% 80% at 50% -20%, #fbf6ec 0%, var(--paper) 70%)}
+  header .cross{font-size:22px;color:var(--gold);letter-spacing:.4em;margin-bottom:10px}
+  header h1{font-size:clamp(24px,6vw,40px);font-weight:400;letter-spacing:.02em}
+  header h1 span{font-style:italic;color:var(--gold-deep)}
+  header a.home{display:inline-block;margin-top:14px;font-family:system-ui,Arial,sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7a6a4d;text-decoration:none}
+  header a.home:hover{color:var(--gold-deep)}
+
+  main{max-width:640px;margin:44px auto 0;padding:0 22px 60px}
+  .prompt{text-align:center;font-size:clamp(22px,5vw,30px);font-weight:400;color:var(--gold-deep);margin-bottom:14px;line-height:1.4}
+  .sub{text-align:center;font-family:system-ui,Arial,sans-serif;font-size:14px;color:#8a7a5d;margin-bottom:30px}
+
+  .choices{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .choice{display:flex;align-items:center;gap:12px;text-align:left;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:18px;font-family:Georgia,serif;font-size:clamp(15px,3.6vw,17px);color:var(--ink);cursor:pointer;transition:border-color .16s,transform .16s,box-shadow .16s,background .16s}
+  .choice .emo{font-size:22px;line-height:1;flex-shrink:0}
+  .choice:hover{border-color:var(--gold);background:#fffdf6;transform:translateY(-2px);box-shadow:0 6px 16px var(--shadow)}
+
+  /* Name entry */
+  .step{display:none;animation:fade .5s ease}
+  .step.show{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .name-wrap{text-align:center}
+  .name-input{width:100%;max-width:360px;font-family:Georgia,serif;font-size:20px;text-align:center;padding:14px 16px;border:1.5px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);margin:8px auto 20px;display:block;outline:none}
+  .name-input:focus{border-color:var(--gold)}
+  .btn{display:inline-block;background:var(--gold);color:#fff;border:none;text-decoration:none;font-family:system-ui,Arial,sans-serif;font-size:15px;font-weight:600;letter-spacing:.05em;padding:13px 32px;border-radius:8px;cursor:pointer;transition:background .15s}
+  .btn:hover{background:var(--gold-deep)}
+  .btn:disabled{opacity:.45;cursor:not-allowed}
+
+  /* Prayer result */
+  .prayer-card{background:radial-gradient(120% 90% at 50% -10%, #fffdf8 0%, #f7f0e2 100%);border:1px solid var(--line);border-radius:16px;padding:42px 32px 36px;box-shadow:0 4px 20px var(--shadow);text-align:center}
+  .prayer-card .cross-sm{font-size:20px;color:var(--gold);letter-spacing:.4em;margin-bottom:16px}
+  .prayer-card h2{font-size:clamp(22px,4.8vw,28px);font-weight:400;color:var(--gold-deep);margin-bottom:22px}
+  .prayer-body{font-size:clamp(17px,4vw,19px);line-height:1.9;color:#3a3226;font-style:italic;white-space:pre-line}
+  .prayer-amen{margin-top:18px;font-style:normal;font-weight:600;letter-spacing:.05em;color:var(--gold-deep)}
+
+  .share{margin-top:30px}
+  .share .stay{font-family:system-ui,Arial,sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#9a8a6d;margin-bottom:16px;text-align:center}
+  .share-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+  .share-btn{display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer;text-decoration:none;font-family:system-ui,Arial,sans-serif;font-size:14px;font-weight:600;letter-spacing:.04em;padding:12px 22px;border-radius:8px;transition:transform .15s,box-shadow .15s,background .15s}
+  .share-btn:hover{transform:translateY(-2px)}
+  .sb-messenger{background:#0084ff;color:#fff}
+  .sb-messenger:hover{background:#0071db}
+  .sb-share{background:var(--gold);color:#fff}
+  .sb-share:hover{background:var(--gold-deep)}
+  .sb-copy{background:var(--card);color:var(--gold-deep);border:1.5px solid var(--gold)}
+  .sb-copy:hover{background:#fffdf6}
+  .share-btn svg{width:18px;height:18px;fill:currentColor}
+  .copied{text-align:center;font-family:system-ui,Arial,sans-serif;font-size:13px;color:var(--gold-deep);margin-top:12px;height:16px}
+
+  .cta-soft{text-align:center;margin-top:32px;padding-top:26px;border-top:1px solid var(--line)}
+  .cta-soft p{font-size:15px;color:#6a5c44;font-family:system-ui,Arial,sans-serif;margin-bottom:14px}
+  .cta-soft a{display:inline-block;background:var(--gold);color:#fff;text-decoration:none;font-family:system-ui,Arial,sans-serif;font-size:14px;font-weight:600;letter-spacing:.06em;padding:12px 28px;border-radius:6px;transition:background .15s}
+  .cta-soft a:hover{background:var(--gold-deep)}
+
+  .again{display:block;margin:24px auto 0;background:none;border:none;font-family:system-ui,Arial,sans-serif;font-size:13px;letter-spacing:.08em;color:#8a7a5d;cursor:pointer;text-decoration:underline}
+  .again:hover{color:var(--gold-deep)}
+
+  footer{text-align:center;padding:40px 20px;border-top:1px solid var(--line);font-family:system-ui,Arial,sans-serif;font-size:12px;color:#8a7a5d}
+  footer a{color:var(--gold-deep);text-decoration:none}
+  .nav-btns{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+    max-width:760px;
+    margin:30px auto 0;
+    padding:0 16px;
+  }
+  .nav-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    text-align:center;
+    text-decoration:none;
+    background:var(--card);
+    color:var(--gold-deep);
+    border:1.5px solid var(--gold);
+    font-family:system-ui,Arial,sans-serif;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:.03em;
+    line-height:1.2;
+    padding:12px 18px;
+    border-radius:10px;
+    transition:background .16s ease, color .16s ease, transform .16s ease, box-shadow .16s ease;
+  }
+  .nav-btn:hover{
+    background:var(--gold);
+    color:#fff;
+    transform:translateY(-2px);
+    box-shadow:0 6px 16px rgba(140,95,22,.28);
+  }
+  /* Mobile: 3 on top row, 2 on bottom row */
+  @media(max-width:640px){
+    .nav-btns{gap:10px}
+    .nav-btn{
+      flex:0 0 calc(33.333% - 10px);
+      padding:12px 6px;
+      font-size:clamp(11px,3vw,13px);
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="cross">&#10013;</div>
+  <h1>Still <span>With</span> Jesus</h1>
+      <nav class="nav-btns">
+  <a href="/#message" class="nav-btn">Message from Jesus</a>
+  <a href="/#grid" class="nav-btn">Collection</a>
+  <a href="/verse.html" class="nav-btn">Verse of the Day</a>
+  <a href="/pray.html" class="nav-btn">Pray With Me</a>
+  <a href="/send-prayer.html" class="nav-btn">Send A Prayer</a>
+</nav>
+  <a class="home" href="/">&larr; Back to home</a>
+</header>
+
+<main>
+  <!-- STEP 1: choose who -->
+  <div class="step show" id="stepWho">
+    <p class="prompt">Who needs your prayer today?</p>
+    <p class="sub">Choose someone, and we&rsquo;ll write a prayer you can send them.</p>
+    <div class="choices" id="choices"></div>
+  </div>
+
+  <!-- STEP 2: enter name -->
+  <div class="step" id="stepName">
+    <div class="name-wrap">
+      <p class="prompt" id="nameHeading">What is their name?</p>
+      <input class="name-input" id="nameInput" type="text" maxlength="24" placeholder="Enter a name" autocomplete="off">
+      <button class="btn" id="createBtn" disabled>Write the Prayer</button>
+    </div>
+  </div>
+
+  <!-- STEP 3: prayer + share -->
+  <div class="step" id="stepPrayer">
+    <div class="prayer-card">
+      <div class="cross-sm">&#10013;</div>
+      <h2 id="prayerTitle"></h2>
+      <div class="prayer-body" id="prayerBody"></div>
+      <div class="prayer-amen">Amen. &#10084;&#65039;</div>
+
+      <div class="share">
+        <div class="stay">Send this prayer to them</div>
+        <div class="share-btns">
+          <a class="share-btn sb-messenger" id="btnMessenger" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.3 2 2 6.2 2 11.8c0 3 1.4 5.6 3.7 7.4V23l3.4-1.9c.9.3 1.9.4 2.9.4 5.7 0 10-4.2 10-9.8S17.7 2 12 2zm1 12.9l-2.6-2.7-4.9 2.7 5.4-5.7 2.6 2.7 4.8-2.7-5.3 5.7z"/></svg>
+            Messenger
+          </a>
+          <button class="share-btn sb-share" id="btnShare">
+            <svg viewBox="0 0 24 24"><path d="M18 16a3 3 0 0 0-2.4 1.2l-6.7-3.9a3 3 0 0 0 0-2.6l6.7-3.9a3 3 0 1 0-.9-2.1c0 .3 0 .6.1.8L8.1 9.4a3 3 0 1 0 0 5.2l6.8 3.9c-.1.3-.1.5-.1.8a3 3 0 1 0 3-3z"/></svg>
+            Share
+          </button>
+          <button class="share-btn sb-copy" id="btnCopy">
+            <svg viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg>
+            Copy Link
+          </button>
+        </div>
+        <div class="copied" id="copiedMsg"></div>
+      </div>
+    </div>
+
+    <div class="cta-soft">
+      <p>Want to keep a reminder of faith close to you?</p>
+      <a href="index.html#grid">Explore our Christian Collection &rarr;</a>
+    </div>
+
+    <button class="again" id="againBtn">&larr; Send another prayer</button>
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 Still With Jesus &middot; <a href="index.html">Home</a>
+</footer>
+
+<script>
+  const groups = {
+    love: {
+      emo:"\u2764\uFE0F", label:"Someone I love",
+      prayers:[
+        "Jesus, please watch over {name} today. Wherever they are, let them feel how deeply they are loved. Guard their heart, guide their steps, and remind them they are never alone.",
+        "Lord, thank You for {name} and for the gift they are to me. Surround them with Your peace today, and let every worry melt away in the warmth of Your love.",
+        "Father, I lift up {name} into Your hands. Fill their day with unexpected joy, quiet their fears, and let them know they are seen, treasured, and held by You.",
+        "Jesus, wrap Your arms around {name} tonight. Where they are tired, give rest. Where they are anxious, give peace. Let them wake tomorrow to Your fresh mercy.",
+        "Lord, bless {name} with more than they could ask for. Pour out Your favor over their life, and let them feel Your presence in every ordinary moment of today.",
+        "Father, protect {name} everywhere they go. Keep them safe under Your wing, and let Your love be the first thing they feel when they open their eyes each morning.",
+        "Jesus, remind {name} how precious they are. On the days they forget their worth, whisper to their heart that they are loved beyond measure, exactly as they are.",
+        "Lord, walk beside {name} through whatever this day holds. Be their strength when they are weak and their comfort when they are weary. Hold them close to You.",
+        "Father, let {name} feel wrapped in love today, mine and Yours. Heal what is hurting, calm what is restless, and fill the quiet corners of their heart with hope.",
+        "Jesus, thank You for placing {name} in my life. Bless every part of their day, guard their dreams tonight, and let them always know how loved they truly are."
+      ]
+    },
+    friend: {
+      emo:"\uD83D\uDE4F", label:"A friend",
+      prayers:[
+        "Jesus, be near to my friend {name} today. Lighten whatever they are carrying, and remind them that they have a friend in You who never leaves.",
+        "Lord, bless {name} with encouragement right when they need it most. Send them small moments of grace today that let them know they are not walking alone.",
+        "Father, watch over {name} and give them strength for the road ahead. Where they feel unseen, let them feel Your eyes upon them, full of love.",
+        "Jesus, fill {name} with peace and hope today. Quiet the noise in their mind, steady their heart, and remind them that You are already in their tomorrow.",
+        "Lord, thank You for the gift of {name}'s friendship. Pour Your kindness back into their life today, and let joy find them when they least expect it.",
+        "Father, guard {name} from all harm and worry. Be their refuge in every storm, and let them rest tonight knowing they are held safely by You.",
+        "Jesus, meet {name} in whatever they are facing right now. Give them courage where there is fear, and light where the way ahead feels dark.",
+        "Lord, surround {name} with Your presence today. Remind them that they matter, that they are loved, and that their story is far from finished.",
+        "Father, bless the work of {name}'s hands and the desires of their heart. Go before them today and make their paths straight and their burdens light.",
+        "Jesus, hold {name} close today. When they feel weary, be their rest. When they feel lost, be their way. Let them know a friend is praying for them."
+      ]
+    },
+    family: {
+      emo:"\uD83D\uDC68\u200D\uD83D\uDC69\u200D\uD83D\uDC67", label:"Family",
+      prayers:[
+        "Jesus, watch over {name} and keep our family close in Your love. Bind us together in grace, and let our home be a place where Your peace always dwells.",
+        "Lord, protect {name} today and every day. Cover them with Your care, guide their choices, and let them always feel they belong and are deeply loved.",
+        "Father, pour out Your blessing on {name}. Heal what is broken between us, strengthen the bonds of love, and let forgiveness flow freely in our family.",
+        "Jesus, be present in {name}'s life today. Guard their coming and going, quiet their worries, and remind them that family and faith will always hold them up.",
+        "Lord, thank You for {name} and for the family You have given me. Fill their day with peace, their heart with joy, and their home with Your gentle presence.",
+        "Father, keep {name} safe under Your wing. When we are apart, let Your love be the thread that ties us together across every mile and every day.",
+        "Jesus, bless {name} with health, hope, and rest. Ease their burdens, calm their fears, and let them feel surrounded by the love of those who care for them.",
+        "Lord, guide {name} with Your wisdom today. In every decision, walk beside them, and let our family always point one another back toward You.",
+        "Father, let {name} know how loved they are within our family. Where there has been distance, bring closeness; where there has been pain, bring healing.",
+        "Jesus, hold {name} and all who share our home in Your hands. Let love be our foundation, grace be our habit, and Your presence be our peace."
+      ]
+    },
+    struggling: {
+      emo:"\uD83D\uDE14", label:"Someone struggling",
+      prayers:[
+        "Jesus, be close to {name} in this hard season. Carry what has grown too heavy for them, and let them feel that they are not facing this alone.",
+        "Lord, meet {name} in their pain today. You are near to the brokenhearted, so draw near to them now, and be the peace they cannot find on their own.",
+        "Father, hold {name} gently through this struggle. When hope feels far away, be their hope. When strength runs out, be their strength. Do not let them fall.",
+        "Jesus, wrap Your arms around {name} tonight. Ease their worry, quiet their fear, and remind them that this pain will not have the final word over their life.",
+        "Lord, lift {name} out of the darkness they are walking through. Send them light for the next step, and comfort for the moments when words won't come.",
+        "Father, be a refuge for {name} in this time of trouble. Shelter them from despair, renew their tired heart, and let each new morning bring fresh mercy.",
+        "Jesus, remind {name} that their story is not over. Even here, even now, You are making a way. Give them just enough strength for today, and hold them through it.",
+        "Lord, catch every tear {name} cries and waste none of their sorrow. Turn their mourning into hope, and let them feel Your presence in the middle of the storm.",
+        "Father, give {name} rest for their weary soul. Take the weight from their shoulders, steady their trembling heart, and surround them with people who care.",
+        "Jesus, do not let {name} lose heart. You have gone before them into tomorrow and are already there, waiting with open arms. Carry them until the light returns."
+      ]
+    }
+  };
+
+  const groupOrder = ['love','friend','family','struggling'];
+
+  const $ = id => document.getElementById(id);
+  const stepWho = $('stepWho'), stepName = $('stepName'), stepPrayer = $('stepPrayer');
+  let currentGroup = null;
+
+  // sanitize a name: trim, strip risky chars, cap length, capitalize first letter
+  function cleanName(raw){
+    let n = (raw || '').replace(/[<>&"'`\/\\{}]/g,'').replace(/\s+/g,' ').trim().slice(0,24);
+    if(!n) return '';
+    return n.charAt(0).toUpperCase() + n.slice(1);
+  }
+
+  function show(step){
+    [stepWho, stepName, stepPrayer].forEach(s=>s.classList.remove('show'));
+    step.classList.add('show');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  // build choice buttons
+  $('choices').innerHTML = groupOrder.map(k => `
+    <button class="choice" data-g="${k}">
+      <span class="emo">${groups[k].emo}</span><span>${groups[k].label}</span>
+    </button>
+  `).join('');
+
+  $('choices').addEventListener('click', e=>{
+    const btn = e.target.closest('.choice'); if(!btn) return;
+    currentGroup = btn.dataset.g;
+    $('nameInput').value = '';
+    $('createBtn').disabled = true;
+    show(stepName);
+    setTimeout(()=>$('nameInput').focus(), 300);
+  });
+
+  $('nameInput').addEventListener('input', ()=>{
+    $('createBtn').disabled = cleanName($('nameInput').value) === '';
+  });
+  $('nameInput').addEventListener('keydown', e=>{
+    if(e.key==='Enter' && !$('createBtn').disabled) $('createBtn').click();
+  });
+
+  $('createBtn').addEventListener('click', ()=>{
+    const name = cleanName($('nameInput').value);
+    if(!name) return;
+    const idx = Math.floor(Math.random()*groups[currentGroup].prayers.length);
+    renderPrayer(currentGroup, name, idx, true);
+  });
+
+  function renderPrayer(group, name, idx, updateUrl){
+    const text = groups[group].prayers[idx].replace(/\{name\}/g, name);
+    $('prayerTitle').textContent = 'A Prayer for ' + name;
+    $('prayerBody').textContent = text;
+    document.title = 'A Prayer for ' + name + ' \u00B7 Still With Jesus';
+
+    // build shareable link
+    const url = location.origin + location.pathname + '?for=' + encodeURIComponent(group) + '&name=' + encodeURIComponent(name) + '&i=' + idx;
+
+    $('btnMessenger').href = 'fb-messenger://share?link=' + encodeURIComponent(url);
+
+    $('btnShare').onclick = async ()=>{
+      const shareData = { title:'A Prayer for '+name, text:'I wrote a prayer for you \u2764\uFE0F', url };
+      if(navigator.share){ try{ await navigator.share(shareData); }catch(_){} }
+      else { copyLink(url); }
+    };
+    $('btnCopy').onclick = ()=> copyLink(url);
+    $('copiedMsg').textContent = '';
+
+    if(updateUrl){
+      history.replaceState(null,'', url);
+    }
+    show(stepPrayer);
+  }
+
+  function copyLink(url){
+    const done = ()=>{ $('copiedMsg').textContent = 'Link copied \u2713'; setTimeout(()=>$('copiedMsg').textContent='',2500); };
+    if(navigator.clipboard){ navigator.clipboard.writeText(url).then(done).catch(()=>fallbackCopy(url,done)); }
+    else fallbackCopy(url,done);
+  }
+  function fallbackCopy(url,done){
+    const t=document.createElement('textarea'); t.value=url; document.body.appendChild(t); t.select();
+    try{ document.execCommand('copy'); done(); }catch(_){}
+    document.body.removeChild(t);
+  }
+
+  $('againBtn').addEventListener('click', ()=>{
+    document.title = 'Send a Prayer \u00B7 Still With Jesus';
+    history.replaceState(null,'', location.pathname);
+    currentGroup=null;
+    show(stepWho);
+  });
+
+  // On load: if URL already has a prayer, show it directly (this is the shared link view)
+  (function initFromUrl(){
+    const p = new URLSearchParams(location.search);
+    const g = p.get('for'), rawName = p.get('name'), i = parseInt(p.get('i'),10);
+    if(g && groups[g] && rawName && !isNaN(i) && groups[g].prayers[i]){
+      const name = cleanName(rawName);
+      if(name){ renderPrayer(g, name, i, false); }
+    }
+  })();
+</script>
+</body>
+</html>

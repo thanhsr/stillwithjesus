@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pray With Me &middot; Still With Jesus</title>
+<meta name="description" content="Tell us what you need prayer for today, and receive a personal prayer and a word of Scripture. Still With Jesus.">
+<link rel="canonical" href="https://stillwithjesus.com/pray.html" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="robots" content="index, follow">
+<style>
+  :root{
+    --ink:#1c1a17;
+    --paper:#f6f1e7;
+    --card:#fffdf8;
+    --gold:#b8862d;
+    --gold-deep:#8a5f16;
+    --line:#e3d8c2;
+    --shadow:rgba(60,44,18,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:Georgia,'Times New Roman',serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  header{
+    text-align:center;
+    padding:44px 20px 24px;
+    border-bottom:1px solid var(--line);
+    background:radial-gradient(120% 80% at 50% -20%, #fbf6ec 0%, var(--paper) 70%);
+  }
+  header .cross{font-size:22px;color:var(--gold);letter-spacing:.4em;margin-bottom:10px}
+  header h1{font-size:clamp(24px,6vw,40px);font-weight:400;letter-spacing:.02em}
+  header h1 span{font-style:italic;color:var(--gold-deep)}
+  header a.home{
+    display:inline-block;margin-top:14px;
+    font-family:system-ui,Arial,sans-serif;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:#7a6a4d;text-decoration:none;
+  }
+  header a.home:hover{color:var(--gold-deep)}
+
+  main{max-width:680px;margin:44px auto 0;padding:0 22px 60px}
+
+  .prompt{
+    text-align:center;
+    font-size:clamp(22px,5vw,30px);
+    font-weight:400;
+    color:var(--gold-deep);
+    margin-bottom:32px;
+    line-height:1.4;
+  }
+
+  .choices{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+  }
+  @media(min-width:600px){ .choices{gap:16px} }
+
+  .choice{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-align:left;
+    background:var(--card);
+    border:1.5px solid var(--line);
+    border-radius:12px;
+    padding:18px 18px;
+    font-family:Georgia,serif;
+    font-size:clamp(15px,3.6vw,17px);
+    color:var(--ink);
+    cursor:pointer;
+    transition:border-color .16s ease, transform .16s ease, box-shadow .16s ease, background .16s ease;
+  }
+  .choice .emo{font-size:22px;line-height:1;flex-shrink:0}
+  .choice:hover{
+    border-color:var(--gold);
+    background:#fffdf6;
+    transform:translateY(-2px);
+    box-shadow:0 6px 16px var(--shadow);
+  }
+
+  /* Result */
+  .result{display:none;animation:fade .6s ease}
+  .result.show{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+  .prayer-card{
+    background:radial-gradient(120% 90% at 50% -10%, #fffdf8 0%, #f7f0e2 100%);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:42px 32px 36px;
+    box-shadow:0 4px 20px var(--shadow);
+    text-align:center;
+  }
+  .prayer-card .cross-sm{font-size:20px;color:var(--gold);letter-spacing:.4em;margin-bottom:16px}
+  .prayer-card h2{
+    font-size:clamp(21px,4.6vw,27px);
+    font-weight:400;color:var(--gold-deep);margin-bottom:22px;
+  }
+  .prayer-body{
+    font-size:clamp(17px,4vw,19px);
+    line-height:1.9;color:#3a3226;font-style:italic;
+    white-space:pre-line;
+  }
+  .prayer-amen{
+    margin-top:18px;font-style:normal;font-weight:600;
+    letter-spacing:.05em;color:var(--gold-deep);
+  }
+
+  .scripture{
+    margin-top:30px;padding-top:26px;border-top:1px solid var(--line);
+  }
+  .scripture .stay{
+    font-family:system-ui,Arial,sans-serif;font-size:12px;letter-spacing:.2em;
+    text-transform:uppercase;color:#9a8a6d;margin-bottom:14px;
+  }
+  .scripture blockquote{
+    font-size:clamp(16px,3.8vw,19px);line-height:1.7;color:#4a4032;font-style:italic;
+  }
+  .scripture cite{
+    display:block;margin-top:10px;font-style:normal;
+    font-family:system-ui,Arial,sans-serif;font-size:13px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--gold-deep);font-weight:600;
+  }
+
+  .cta-soft{text-align:center;margin-top:32px}
+  .cta-soft p{
+    font-size:15px;color:#6a5c44;font-family:system-ui,Arial,sans-serif;margin-bottom:14px;
+  }
+  .cta-soft a{
+    display:inline-block;background:var(--gold);color:#fff;text-decoration:none;
+    font-family:system-ui,Arial,sans-serif;font-size:14px;font-weight:600;
+    letter-spacing:.06em;padding:12px 28px;border-radius:6px;transition:background .15s ease;
+  }
+  .cta-soft a:hover{background:var(--gold-deep)}
+
+  .again{
+    display:block;margin:24px auto 0;background:none;border:none;
+    font-family:system-ui,Arial,sans-serif;font-size:13px;letter-spacing:.08em;
+    color:#8a7a5d;cursor:pointer;text-decoration:underline;
+  }
+  .again:hover{color:var(--gold-deep)}
+
+  footer{
+    text-align:center;padding:40px 20px;border-top:1px solid var(--line);
+    font-family:system-ui,Arial,sans-serif;font-size:12px;color:#8a7a5d;
+  }
+  footer a{color:var(--gold-deep);text-decoration:none}
+.nav-btns{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+    max-width:760px;
+    margin:30px auto 0;
+    padding:0 16px;
+  }
+  .nav-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    text-align:center;
+    text-decoration:none;
+    background:var(--card);
+    color:var(--gold-deep);
+    border:1.5px solid var(--gold);
+    font-family:system-ui,Arial,sans-serif;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:.03em;
+    line-height:1.2;
+    padding:12px 18px;
+    border-radius:10px;
+    transition:background .16s ease, color .16s ease, transform .16s ease, box-shadow .16s ease;
+  }
+  .nav-btn:hover{
+    background:var(--gold);
+    color:#fff;
+    transform:translateY(-2px);
+    box-shadow:0 6px 16px rgba(140,95,22,.28);
+  }
+  /* Mobile: 3 on top row, 2 on bottom row */
+  @media(max-width:640px){
+    .nav-btns{gap:10px}
+    .nav-btn{
+      flex:0 0 calc(33.333% - 10px);
+      padding:12px 6px;
+      font-size:clamp(11px,3vw,13px);
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="cross">&#10013;</div>
+  <h1>Still <span>With</span> Jesus</h1>
+      <nav class="nav-btns">
+  <a href="/#message" class="nav-btn">Message from Jesus</a>
+  <a href="/#grid" class="nav-btn">Collection</a>
+  <a href="/verse.html" class="nav-btn">Verse of the Day</a>
+  <a href="/pray.html" class="nav-btn">Pray With Me</a>
+  <a href="/send-prayer.html" class="nav-btn">Send A Prayer</a>
+</nav>
+  <a class="home" href="/">&larr; Back to home</a>
+</header>
+
+<main>
+  <div id="chooseView">
+    <p class="prompt">What do you need prayer for today?</p>
+    <div class="choices" id="choices"></div>
+  </div>
+
+  <div class="result" id="resultView">
+    <div class="prayer-card">
+      <div class="cross-sm">&#10013;</div>
+      <h2 id="prayerTitle"></h2>
+      <div class="prayer-body" id="prayerBody"></div>
+      <div class="prayer-amen">Amen. &#10084;&#65039;</div>
+
+      <div class="scripture">
+        <div class="stay">Stay here for a moment</div>
+        <blockquote id="verseText"></blockquote>
+        <cite id="verseRef"></cite>
+      </div>
+    </div>
+
+    <div class="cta-soft">
+      <p>Want to keep this reminder of faith close to you?</p>
+      <a href="index.html#grid">Explore our Christian Collection &rarr;</a>
+    </div>
+
+    <button class="again" id="againBtn">&larr; Pray for something else</button>
+  </div>
+</main>
+
+<footer>
+  Scripture quoted from the World English Bible (public domain).<br>
+  &copy; 2026 Still With Jesus &middot; <a href="index.html">Home</a>
+</footer>
+
+<script>
+  const prayers = [
+    {
+      emo:"\u2764\uFE0F", label:"I need peace",
+      title:"A Prayer for Peace",
+      body:"Dear Jesus,\nMy heart is restless, and I come to You for calm.\nQuiet the noise inside me and still my racing thoughts.\nWhere there is worry, plant Your peace.\nWhere there is fear, remind me that You are near.\nI choose to trust You with all that I cannot control.\nLet Your peace, which surpasses all understanding, guard my heart today.",
+      verse:"Peace I leave with you. My peace I give to you. Don't let your heart be troubled, neither let it be fearful.",
+      ref:"John 14:27"
+    },
+    {
+      emo:"\uD83D\uDE14", label:"I'm hurting",
+      title:"A Prayer for the Hurting",
+      body:"Dear Jesus,\nYou see the pain I carry that no one else can see.\nMeet me here in the ache and hold me close.\nI don't need the perfect words tonight, only Your presence.\nBind up what is broken in me and be gentle with my wounds.\nRemind me that You are near to the brokenhearted,\nand that this pain will not have the final word.",
+      verse:"Yahweh is near to those who have a broken heart, and saves those who have a crushed spirit.",
+      ref:"Psalm 34:18"
+    },
+    {
+      emo:"\uD83D\uDCB0", label:"I'm worried about money",
+      title:"A Prayer for Provision",
+      body:"Dear Jesus,\nThe weight of these needs presses heavy on me.\nI lay every bill, every fear, every number at Your feet.\nYou know what I need before I even ask.\nHelp me not to be anxious for tomorrow,\nbut to trust that You will provide what this day requires.\nBe my provider and my peace in the uncertainty.",
+      verse:"Therefore don't be anxious for tomorrow, for tomorrow will be anxious for itself.",
+      ref:"Matthew 6:34"
+    },
+    {
+      emo:"\uD83D\uDC94", label:"I'm going through heartbreak",
+      title:"A Prayer Through Heartbreak",
+      body:"Dear Jesus,\nMy heart is in pieces, and the loss feels too heavy to hold.\nSit with me in this grief and do not rush my healing.\nGather up my tears, for You have kept every one.\nWhen I cannot see how I will move forward,\nbe the strength I do not have and the hope I cannot feel.\nSlowly, gently, make me whole again.",
+      verse:"He heals the broken in heart, and binds up their wounds.",
+      ref:"Psalm 147:3"
+    },
+    {
+      emo:"\uD83D\uDE4F", label:"I need a blessing",
+      title:"A Prayer for Blessing",
+      body:"Dear Jesus,\nI come with open hands, asking for Your favor over my life.\nBless the work of my hands and the desires of my heart.\nGo before me and make my paths straight.\nShine Your face upon me and be gracious to me.\nAnd whatever blessing You pour out,\nhelp me to become a blessing to others in return.",
+      verse:"Yahweh bless you, and keep you. Yahweh make his face to shine on you, and be gracious to you.",
+      ref:"Numbers 6:24-25"
+    },
+    {
+      emo:"\uD83D\uDE34", label:"I can't sleep",
+      title:"A Prayer Before You Sleep",
+      body:"Dear Jesus,\nTonight, I give You everything that is weighing on my heart.\nI don't know what tomorrow will bring,\nbut I know You are already there.\nGive me peace tonight.\nQuiet my thoughts.\nRemind me that I am not alone.\nWatch over me as I rest, and let me wake to Your mercy.",
+      verse:"In peace I will both lay myself down and sleep, for you, Yahweh alone, make me live in safety.",
+      ref:"Psalm 4:8"
+    },
+    {
+      emo:"\uD83D\uDC68\u200D\uD83D\uDC69\u200D\uD83D\uDC67", label:"Pray for my family",
+      title:"A Prayer for My Family",
+      body:"Dear Jesus,\nI lift up the people I love and place them in Your hands.\nWatch over each of them, wherever they are today.\nProtect them, guide them, and draw them close to You.\nWhere there is division, bring healing.\nWhere there is worry, bring peace.\nBind us together in love, and let our home be a place where You dwell.",
+      verse:"As for me and my house, we will serve Yahweh.",
+      ref:"Joshua 24:15"
+    },
+    {
+      emo:"\u2725", label:"I just need Jesus",
+      title:"A Prayer to Draw Near",
+      body:"Dear Jesus,\nI don't have all the right words, and I don't need them.\nI just need You.\nCome near to me and let me feel that You are here.\nStrip away everything that distracts me from Your love,\nand let me rest in the simple truth that I am Yours.\nYou are enough. You have always been enough.",
+      verse:"Draw near to God, and he will draw near to you.",
+      ref:"James 4:8"
+    }
+  ];
+
+  const choicesEl = document.getElementById('choices');
+  const chooseView = document.getElementById('chooseView');
+  const resultView = document.getElementById('resultView');
+
+  choicesEl.innerHTML = prayers.map((p,i) => `
+    <button class="choice" data-i="${i}">
+      <span class="emo">${p.emo}</span>
+      <span>${p.label}</span>
+    </button>
+  `).join('');
+
+  choicesEl.addEventListener('click', e => {
+    const btn = e.target.closest('.choice');
+    if(!btn) return;
+    const p = prayers[+btn.dataset.i];
+    document.getElementById('prayerTitle').textContent = p.title;
+    document.getElementById('prayerBody').textContent = p.body;
+    document.getElementById('verseText').textContent = '\u201C' + p.verse + '\u201D';
+    document.getElementById('verseRef').textContent = '\u2014 ' + p.ref;
+    chooseView.style.display = 'none';
+    resultView.classList.add('show');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  document.getElementById('againBtn').addEventListener('click', () => {
+    resultView.classList.remove('show');
+    chooseView.style.display = 'block';
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+</script>
+</body>
+</html>

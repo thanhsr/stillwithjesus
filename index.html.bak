@@ -6,7 +6,7 @@
 <meta name="description" content="Wear your faith. Share His love. ✝️ Discover Christian gifts and apparel at Still With Jesus. ❤️">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://stillwithjesus.com" />
-<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Still With Jesus - Christian Gifts Worth Looking At ✝️" />
@@ -347,10 +347,12 @@
   <div class="cross">&#10013;</div>
   <h1>Still <span>With</span> Jesus</h1>
   <p>Faith &middot; Grace &middot; Everyday Blessings</p>
-  <nav class="nav-btns">
-  <a href="#message" class="nav-btn">✝ Message from Jesus</a>
-  <a href="#grid" class="nav-btn">Collection</a>
-  <a href="verse.html" class="nav-btn">Verse of the Day</a>
+    <nav class="nav-btns">
+  <a href="/#message" class="nav-btn">Message from Jesus</a>
+  <a href="/#grid" class="nav-btn">Collection</a>
+  <a href="/verse.html" class="nav-btn">Verse of the Day</a>
+  <a href="/pray.html" class="nav-btn">Pray With Me</a>
+  <a href="/send-prayer.html" class="nav-btn">Send A Prayer</a>
 </nav>
 </header>
 
