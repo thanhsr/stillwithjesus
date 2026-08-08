@@ -137,18 +137,18 @@
 <script>
   // Replace img and url with your real Amazon affiliate data.
   const products = [
-    {name:"Product 1", img:"/IMG/", url:"#"},
-    {name:"Product 2", img:"/IMG/", url:"#"},
-    {name:"Product 3", img:"/IMG/", url:"#"},
-    {name:"Product 4", img:"/IMG/", url:"#"},
-    {name:"Product 5", img:"/IMG/", url:"#"},
+    {name:"Christian men's shirts", img:"/IMG/1.jpg", url:"https://amzn.to/4q80XXN"},
+	{name:"Christian women's shirts", img:"/IMG/4.jpg", url:"https://amzn.to/4pZKIvG"},
+    {name:"Cross+Crown Premium 14K Gold", img:"/IMG/2.jpg", url:"https://amzn.to/4xqbZd8"},
+    {name:"Holy Bible", img:"/IMG/3.jpg", url:"https://amzn.to/4q1sGJA"},
+    {name:"Christian women's necklace", img:"/IMG/5.jpg", url:"https://amzn.to/4xt6BGu"},
     {name:"Product 6", img:"/IMG/", url:"#"},
-    {name:"Product 7", img:"https://placehold.co/600x600?text=7", url:"#"},
-    {name:"Product 8", img:"https://placehold.co/600x600?text=8", url:"#"},
-    {name:"Product 9", img:"https://placehold.co/600x600?text=9", url:"#"},
-    {name:"Product 10", img:"https://placehold.co/600x600?text=10", url:"#"},
-    {name:"Product 11", img:"https://placehold.co/600x600?text=11", url:"#"},
-    {name:"Product 12", img:"https://placehold.co/600x600?text=12", url:"#"}
+    {name:"Product 7", img:"/IMG/1.jpg", url:"#"},
+    {name:"Product 8", img:"/IMG/1.jpg", url:"#"},
+    {name:"Product 9", img:"/IMG/1.jpg", url:"#"},
+    {name:"Product 10", img:"/IMG/10jpg", url:"#"},
+    {name:"Product 11", img:"/IMG/11jpg", url:"#"},
+    {name:"Product 12", img:"/IMG/12jpg", url:"#"}
   ];
 
   const cart = '<svg viewBox="0 0 24 24"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM6.2 6l1.2 6.4c.1.6.6 1 1.2 1h7.9c.6 0 1.1-.4 1.2-1L19 8H7.4l-.3-1.5L6.7 4H3v1.5h2.5L6.2 6z"/></svg>';
