@@ -206,7 +206,7 @@
   <a href="/pray.html" class="nav-btn">Pray With Me</a>
   <a href="/send-prayer.html" class="nav-btn">Send A Prayer</a>
 </nav>
-  <a class="home" href="index.html">&larr; Back to home</a>
+  <a class="home" href="/">&larr; Back to home</a>
 </header>
 
 <main>

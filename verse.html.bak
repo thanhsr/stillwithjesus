@@ -175,6 +175,7 @@
   <a href="/#grid" class="nav-btn">Collection</a>
   <a href="/verse.html" class="nav-btn">Verse of the Day</a>
   <a href="/pray.html" class="nav-btn">Pray With Me</a>
+  <a href="/send-prayer.html" class="nav-btn">Send A Prayer</a>
 </nav>
   <a class="home" href="/">&larr; Back to home</a>
 </header>
