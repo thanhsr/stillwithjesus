@@ -272,7 +272,7 @@
   @keyframes blink{50%{opacity:0}}
   .pray-cta{
     margin-top:26px;
-    padding-top:22px;
+    padding-top:0;
     border-top:1px solid var(--line);
     opacity:0;
     transform:translateY(8px);
@@ -345,7 +345,14 @@
     <div class="pray-cross">&#10013;</div>
     <div class="pray-eyebrow">A message for you today</div>
     <p class="pray-text" id="prayText"></p>
+
     <div class="pray-cta" id="prayCta">
+		<nav class="nav-btns">
+  <a href="/#grid" class="nav-btn">Collection</a>
+  <a href="/verse.html" class="nav-btn">Verse of the Day</a>
+  <a href="/pray.html" class="nav-btn">Pray With Me</a>
+  <a href="/send-prayer.html" class="nav-btn">Send A Prayer</a>
+</nav>
       <p>If these words touched your heart, you can help our team keep sharing His message and maintaining the platforms that carry His love to others.</p>
       <a class="pray-btn" href="#grid" id="prayShop">Support Our Mission</a>
     </div>
