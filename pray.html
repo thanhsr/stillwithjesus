@@ -203,6 +203,43 @@
       font-size:clamp(11px,3vw,13px);
     }
   }
+  .social{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    margin-bottom:18px;
+  }
+  .social a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    color:#7a6a4d;
+    background:var(--card);
+    transition:color .15s ease, border-color .15s ease, transform .15s ease;
+  }
+  .social a:hover{
+    color:var(--gold-deep);
+    border-color:var(--gold);
+    transform:translateY(-2px);
+  }
+  .social svg{width:19px;height:19px;fill:currentColor}
+    .pray-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(28,22,12,.72);
+    backdrop-filter:blur(3px);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:1000;
+    opacity:0;
+    transition:opacity .4s ease;
+  }
 </style>
 </head>
 <body>
